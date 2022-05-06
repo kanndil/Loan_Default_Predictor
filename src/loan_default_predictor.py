@@ -218,7 +218,7 @@ class NN:
             if (cc[i] == 0):
                 biased_learning_rate[i]+= 1
             else:
-                biased_learning_rate[i]+= 4
+                biased_learning_rate[i]+= 3
        biased_learning_rate= pd.DataFrame(biased_learning_rate)
        
         
@@ -266,9 +266,10 @@ class NN:
         y_hat= self.forward(x_test.T)
         #print(y_hat.shape)
         predicted_labels = y_hat.T
+        print(predicted_labels)
         print(predicted_labels.describe())
         y= float(predicted_labels.describe().iloc[4]) #25%
-        df = [1 if x >= y  else 0 for x in predicted_labels[0]]
+        df = [1 if x >= 0.5  else 0 for x in predicted_labels[0]]
         return df
                     
         
@@ -278,15 +279,15 @@ class NN:
 
 ###################
                     
-nn = NN(lr=0.4)
+#nn = NN(lr=0.4)
 
-nn.add_layer(25,8,activation="sigmoid",name="l1")
-nn.add_layer(8,8,activation = "sigmoid",name="l2")
-nn.add_layer(8,8,activation = "sigmoid",name="l3")
-nn.add_layer(8,1,activation = "sigmoid",name="l4")
+#nn.add_layer(25,8,activation="sigmoid",name="l1")
+#nn.add_layer(8,8,activation = "sigmoid",name="l2")
+#nn.add_layer(8,8,activation = "sigmoid",name="l3")
+#nn.add_layer(8,1,activation = "sigmoid",name="l4")
 
 
-############
+#############
 #nn.fit(X_train.astype(float),y_train.astype(float),epochs=200)
 
 #predicted_labels = nn.predict(X_test)

@@ -44,10 +44,10 @@ def get_new_sample():
 
 
 
-    loan_amount_c= (loan_amount-16500.0)/(3576500.0-16500.0)
-    term_c= (term-96.0)/(360.0-96.0)
-    income_c= (income)/(578580.0)
-    Credit_Score_c= (Credit_Score-300.0)/(900.0-300.0)
+    loan_amount_c=  4*(loan_amount-16500.0)/(3576500.0-16500.0)
+    term_c=         4*(term-96.0)/(360.0-96.0)
+    income_c=       4*(income)/(578580.0)
+    Credit_Score_c= 4*(Credit_Score-300.0)/(900.0-300.0)
 
 
 #['cf' nan 'ncf']
@@ -229,7 +229,7 @@ def cleaning_and_fitting():
     # Normalization 
     scaled_colmns={'loan_amount','term','income','Credit_Score'}
     for column in scaled_colmns:
-        table[column] = (table[column] - table[column].min()) / (table[column].max() - table[column].min())    
+        table[column] = 4*(table[column] - table[column].min()) / (table[column].max() - table[column].min())    
 
     table_no_nulls = table.copy()
     # Calulating the mean of both columns 
@@ -262,7 +262,7 @@ def cleaning_and_fitting():
     # print ("y train",y_train)
     # print("y_train original shape: ",y_train.shape)
 
-    model_classifier = NN(lr=0.4)
+    model_classifier = NN(lr=0.08)
 
     model_classifier.add_layer(25,8,activation="sigmoid",name="l1")
     model_classifier.add_layer(8,8,activation = "sigmoid",name="l2")
@@ -271,7 +271,7 @@ def cleaning_and_fitting():
 
 
     ############
-    model_classifier.fit(X_train.astype(float),y_train.astype(float),epochs=200)
+    model_classifier.fit(X_train.astype(float),y_train.astype(float),epochs=1000)
 
 
 
