@@ -17,8 +17,8 @@ make sure to have :  7.0 <= click version  < 8.1
 
 # How to run the project
 
-    cd /phase_three
-    streamlit run web_page.py
+    cd /src
+    streamlit run web_app.py
 
 # URL of the hosted web application
 

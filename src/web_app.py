@@ -44,10 +44,10 @@ def get_new_sample():
 
 
 
-    loan_amount_c=  4*(loan_amount-16500.0)/(3576500.0-16500.0)
-    term_c=         4*(term-96.0)/(360.0-96.0)
-    income_c=       4*(income)/(578580.0)
-    Credit_Score_c= 4*(Credit_Score-300.0)/(900.0-300.0)
+    loan_amount_c=  10*(loan_amount-16500.0)/(3576500.0-16500.0)
+    term_c=         10*(term-96.0)/(360.0-96.0)
+    income_c=       10*(income)/(578580.0)
+    Credit_Score_c= 10*(Credit_Score-300.0)/(900.0-300.0)
 
 
 #['cf' nan 'ncf']
