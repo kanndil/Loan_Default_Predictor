@@ -264,10 +264,13 @@ def cleaning_and_fitting():
 
     model_classifier = NN(lr=0.08)
 
-    model_classifier.add_layer(25,8,activation="sigmoid",name="l1")
-    model_classifier.add_layer(8,8,activation = "sigmoid",name="l2")
-    model_classifier.add_layer(8,8,activation = "sigmoid",name="l3")
-    model_classifier.add_layer(8,1,activation = "sigmoid",name="l4")
+    model_classifier.add_layer (25,8,activation = "sigmoid",name="l1")
+
+    model_classifier.add_layer (8,8, activation = "sigmoid",name="l2")
+
+    model_classifier.add_layer (8,8, activation = "sigmoid",name="l3")
+
+    model_classifier.add_layer (8,1, activation = "sigmoid",name="l4")
 
 
     ############
